@@ -1,0 +1,39 @@
+<div>
+  <div class="col-md-6 col-md-offset-3">
+  &nbsp;
+  <h3>Login</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <div style="align: centre; border: 1px solid; padding-left: 20px; margin-top: 20px;length:500px;  height: 200px">
+    <table style="margin-top:40px">
+    <tr>
+    <td align="center" style="font-weight: bold;">
+              User Name
+          </td>
+          <td>&nbsp;</td>
+          <td>    <input type="text" style="margin-right: 10px; padding-left: 10px " class="form-control" name="username" formControlName="userName" required />
+          <div *ngIf="!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched" >Username is required</div>
+         </td>
+         </tr>
+         &nbsp;
+         <tr>
+          <td align="center" style="font-weight: bold;">
+              Password
+           </td>
+           <td>&nbsp;</td>
+           <td>   <input type="password" style="margin-right: 10px; padding-left: 10px "class="form-control" name="password" formControlName="password" required />
+              <div *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched " >Password is required</div>
+          </td>
+          </tr>
+          
+          </table>
+          <br/>
+          </div>
+          <br />
+          <div style="margin-bottom: 10px ">
+              <button [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+          </div>
+          
+    </form>
+  </div>
+  </div>
